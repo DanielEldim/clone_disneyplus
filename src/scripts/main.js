@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             exibeElementosDoHeader();
         }
-
     })
 
-    //Seção de atrações, programação das abas
-    for (let i = 0; i <  buttons.length; i++) {
+    // Seção de atrações, programação das abas
+    for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(botao) {
             const abaAlvo = botao.target.dataset.tabButton;
             const aba = document.querySelector(`[data-tab-id=${abaAlvo}]`);
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 
-    //Seção FAQ, accordion
+    // Seção FAQ, accordion
     for (let i = 0; i < questions.length; i++) {
         questions[i].addEventListener('click', abreOuFechaResposta);
     }
@@ -36,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function ocultaElementosDoHeader() {
     const header = document.querySelector('header');
-    header.classList.add('header--is-hidden')
+    header.classList.add('header--is-hidden');
 }
 
 function exibeElementosDoHeader() {
     const header = document.querySelector('header');
-    header.classList.remove('header--is-hidden')
+    header.classList.remove('header--is-hidden');
 }
 
 function abreOuFechaResposta(elemento) {
@@ -53,13 +52,13 @@ function abreOuFechaResposta(elemento) {
 
 function removeBotaoAtivo() {
     const buttons = document.querySelectorAll('[data-tab-button]');
-    for (let i = 0; i <  buttons.length; i++) {
-        buttons [i].classList.remove('shows__tabs__button--is-active')
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('shows__tabs__button--is-active');
     }
 }
 
-
-function escondeTodasAbas () {
+function escondeTodasAbas() {
     const tabsContainer = document.querySelectorAll('[data-tab-id]');
 
     for (let i = 0; i < tabsContainer.length; i++) {
